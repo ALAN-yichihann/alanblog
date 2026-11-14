@@ -44,14 +44,16 @@ html(lang=config.language || 'zh-CN')
           var picked = null;
           try {
             var stored = window.sessionStorage.getItem(storageKey);
-            if (stored && list.indexOf(stored) !== -1) {
-              picked = stored;
-            } else if (isHome) {
+            // 首页每次进入（含刷新）都重新随机；其它页面优先沿用会话里选中的那张，
+            // 没有会话记录时随机一次并记住，保证站内翻页不换图。
+            if (isHome || !stored || list.indexOf(stored) === -1) {
               picked = list[Math.floor(Math.random() * list.length)];
               window.sessionStorage.setItem(storageKey, picked);
+            } else {
+              picked = stored;
             }
           } catch (error) {
-            picked = null;
+            picked = list[Math.floor(Math.random() * list.length)];
           }
           if (picked) {
             document.documentElement.style.setProperty('--hsad-sidebar-bg', 'url("' + picked + '")');
