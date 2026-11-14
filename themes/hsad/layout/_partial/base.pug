@@ -39,14 +39,27 @@ html(lang=config.language || 'zh-CN')
       script.
         (function () {
           var list = !{JSON.stringify(backgroundList)};
-          var isHome = !{JSON.stringify(is_home())};
           var storageKey = 'hsad-sidebar-background';
           var picked = null;
+          var navType = 'navigate';
+
+          // 判断本次是“刷新”还是“站内跳转”：只有刷新才重新选图
+          try {
+            var entries = performance.getEntriesByType('navigation');
+            if (entries && entries.length) {
+              navType = entries[0].type;
+            } else if (window.performance.navigation && window.performance.navigation.type === 1) {
+              navType = 'reload';
+            }
+          } catch (error) {
+            navType = 'navigate';
+          }
+
           try {
             var stored = window.sessionStorage.getItem(storageKey);
-            // 首页每次进入（含刷新）都重新随机；其它页面优先沿用会话里选中的那张，
-            // 没有会话记录时随机一次并记住，保证站内翻页不换图。
-            if (!stored || list.indexOf(stored) === -1) {
+            // 刷新页面、或会话里还没有图时，重新随机一张并记住；
+            // 点击菜单/文章、前进后退都沿用会话里那张，保证站内浏览不换图。
+            if (navType === 'reload' || !stored || list.indexOf(stored) === -1) {
               picked = list[Math.floor(Math.random() * list.length)];
               window.sessionStorage.setItem(storageKey, picked);
             } else {

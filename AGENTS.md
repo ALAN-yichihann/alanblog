@@ -104,11 +104,12 @@ node node_modules\hexo-cli\bin\hexo clean
 
 行为：
 
-- 每次打开或刷新**首页**都会重新随机一张，并记在 `sessionStorage` 的 `hsad-sidebar-background` 里
-- 文章、关于、归档、分类、标签等页面优先沿用会话里的那张，站内翻页不换图
-- 直接打开这些页面（会话里没有记录）时随机一次并记住，不会退回默认图
-- 从文章页点回首页时会重新随机，首页本身就是“随机展示位”
+- **刷新任意页面**（首页、文章、关于等）都会重新随机一张，并记在 `sessionStorage` 的 `hsad-sidebar-background` 里
+- 点击菜单、文章链接等站内跳转，以及前进 / 后退，都沿用会话里的那张，不换图
+- 首次进入站内任意页面（会话里没有记录）时随机一次并记住，不会退回默认图
 - 关掉标签页再打开会重新随机
+
+实现上用 `performance.getEntriesByType('navigation')[0].type` 区分 `reload` 和 `navigate`，只有 `reload` 才重新选图。
 
 实现位置：
 
