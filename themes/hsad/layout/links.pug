@@ -13,7 +13,7 @@ block content
     each item in links
       a.friend-card(href=item.url target='_blank' rel='noopener')
         if item.avatar
-          img.friend-card__avatar(src=item.avatar alt=item.name || item.blog || 'avatar' loading='lazy')
+          img.friend-card__avatar(src=url_for(item.avatar) alt=item.name || item.blog || 'avatar' loading='lazy')
         .friend-card__body
           strong.friend-card__name= item.name || item.blog
           if item.blog

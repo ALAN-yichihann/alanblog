@@ -1,28 +1,18 @@
 ---
 layout: links
-title: 我的小伙伴们
-description: 一些很喜欢的站点和朋友。这里放的是示例数据，换成你自己的就好。
+title: 链接网站
+description: 一些和我有关的站点。
 links:
-  - url: https://hexo.io
+  - url: https://nsfz-developer.xyz
+    avatar: '/images/friends/club-logo.png'
+    name: 南师附中开发者社官网
+    blog: 南师附中开发者社官网
+    desc: 本人是社团老登，这个网站是我做的（挺胸）
+  - url: https://drivinggodj.github.io/nsfz-campus-gallery/
     avatar: ''
-    name: Hexo
-    blog: Hexo 官方站点
-    desc: 静态博客生成器，这个站点就是它生成的。
-  - url: https://github.com/watanabe-hsad/hexo-theme-hsad
-    avatar: ''
-    name: watanabe
-    blog: hexo-theme-hsad
-    desc: 这个主题的作者，仓库里有完整的配置说明。
-  - url: https://example.com
-    avatar: ''
-    name: Example
-    blog: Example Blog
-    desc: 一条占位的友链，用来看看列表的排版效果。
-  - url: https://another-example.com
-    avatar: ''
-    name: Another
-    blog: Another Blog
-    desc: 再一条占位友链，写一句短介绍就很好看。
+    name: 附中影像
+    blog: 将附中的时间，凝固起来。
+    desc: 支持存储和上传南师附中的照片，并显示照片拍摄的时间和地点
 ---
 
 如果你想在友链列表上方多写一点说明，也可以直接写在这里。下面这些条目来自页面的 front matter。
