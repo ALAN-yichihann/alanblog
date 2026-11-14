@@ -1,0 +1,53 @@
+# hexo-theme-hsad 主题配置（预览站点使用的中性示例）
+# 图片放在站点 source/images/ 下，这里按站点根路径引用
+avatar: /images/avatar.jpg
+sidebar_background: /images/background.png
+
+accent_color: '#496b8c'
+accent_soft: '#dce8f0'
+
+brand_name: 夜航
+brand_subtitle: 把想说的话，慢慢写下来
+sidebar_note: 一些技术笔记、读书摘记，还有一些没头没尾的瞬间。
+
+# 当前版本首页模板没有启用 hero，这里留空占位
+hero:
+  title: ''
+  kicker: ''
+  description: ''
+
+excerpt_length: 56
+
+menu:
+  - name: 首页
+    path: /
+  - name: 归档
+    path: /archives/
+  - name: 分类
+    path: /categories/
+  - name: 标签
+    path: /tags/
+  - name: 搜索
+    path: /search/
+  - name: 友链
+    path: /links/
+  - name: 关于
+    path: /about/
+
+social:
+  - name: GitHub
+    url: https://github.com/watanabe-hsad
+  - name: E-Mail
+    url: mailto:hello@example.com
+
+footer:
+  text: 有些话适合留在页面里。
+  support:
+    enable: false
+    title: Your Sponsor
+    link: https://example.com/
+    logo: ''
+    prefix: 本网站由
+    suffix: 提供支持
+  license_name: CC BY-NC 4.0
+  license_url: https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans
