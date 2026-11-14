@@ -34,6 +34,29 @@ html(lang=config.language || 'zh-CN')
             #{accentSoft ? `--accent-soft: color-mix(in srgb, ${accentColor || accentSoft} 30%, #1c242c);` : ''}
           }
         }
+    - var backgroundList = typeof hsad_backgrounds === 'function' ? hsad_backgrounds() : []
+    if backgroundList.length
+      script.
+        (function () {
+          var list = !{JSON.stringify(backgroundList)};
+          var isHome = !{JSON.stringify(is_home())};
+          var storageKey = 'hsad-sidebar-background';
+          var picked = null;
+          try {
+            var stored = window.sessionStorage.getItem(storageKey);
+            if (stored && list.indexOf(stored) !== -1) {
+              picked = stored;
+            } else if (isHome) {
+              picked = list[Math.floor(Math.random() * list.length)];
+              window.sessionStorage.setItem(storageKey, picked);
+            }
+          } catch (error) {
+            picked = null;
+          }
+          if (picked) {
+            document.documentElement.style.setProperty('--hsad-sidebar-bg', 'url("' + picked + '")');
+          }
+        })();
     script(src=hsad_theme_asset('/js/hsad-theme.js') defer)
   body(class=[is_home() ? 'view-home' : 'view-inner', is_post() ? 'view-post' : 'view-page'].join(' '))
     if is_post()

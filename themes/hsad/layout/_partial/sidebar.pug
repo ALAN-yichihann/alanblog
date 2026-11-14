@@ -3,7 +3,7 @@
 - var socialItems = theme.social || []
 - var pagePath = (page.path || '').replace(/^\/+/, '')
 section(class=`sidebar sidebar--${mode}`)
-  .sidebar__backdrop(style=theme.sidebar_background ? `background-image:url(${url_for(theme.sidebar_background)})` : '')
+  .sidebar__backdrop(style=theme.sidebar_background ? `--hsad-sidebar-bg-fallback:url("${url_for(theme.sidebar_background)}")` : '')
   .sidebar__overlay
   .sidebar__content
     a.sidebar__brand(href=url_for('/'))

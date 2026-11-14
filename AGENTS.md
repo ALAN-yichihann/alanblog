@@ -98,8 +98,31 @@ node node_modules\hexo-cli\bin\hexo clean
 
 以后从上游重新复制主题时，记得删除 `themes/hsad/source/images/` 下的重复图片，否则换图不生效。
 
+## 首页随机背景
+
+图片放在 `source/images/backgrounds/`（jpg / png / webp / avif），无需改配置，重新生成即可生效。
+
+行为：
+
+- 打开首页时随机选一张，记在 `sessionStorage` 的 `hsad-sidebar-background` 里
+- 之后点进文章、关于、归档等任何页面都沿用同一张，不切换
+- 直接从文章页进入（会话里没有记录）时用主题配置的 `sidebar_background` 兜底
+- 同一标签页内保持一致；关掉标签页再打开会重新随机
+
+实现位置：
+
+| 文件 | 作用 |
+| --- | --- |
+| `themes/hsad/scripts/backgrounds.js` | 注册 `hsad_backgrounds` helper，读取目录并拼出带 `root` 的 URL |
+| `themes/hsad/layout/_partial/base.pug` | 在 `<head>` 里注入选择逻辑，写入 `--hsad-sidebar-bg` 变量 |
+| `themes/hsad/layout/_partial/sidebar.pug` | 把 `sidebar_background` 写成 `--hsad-sidebar-bg-fallback` 兜底 |
+| `themes/hsad/source/css/hsad-theme.css` | `.sidebar__backdrop` 用 `var(--hsad-sidebar-bg, var(--hsad-sidebar-bg-fallback))` |
+
+因为选择逻辑写在 `<head>` 的同步脚本里，背景在首次绘制前就确定，不会出现先显示默认图再闪变的情况。
+
 ## 内容资源
 
 - `source/images/avatar.jpg`、`background.png`：站点自己的头像与侧栏背景（主题副本里不再保留同名文件）
+- `source/images/backgrounds/`：首页随机背景（4 张示例图，可随意增删）
 - `source/images/ssrf-terminal.png`、`balcony-night.png`：用 Pillow 生成的示意图
 - `source/favicon.ico`：按主题强调色生成的 32×32 圆角图标

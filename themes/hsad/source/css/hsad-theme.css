@@ -129,6 +129,8 @@ img {
 }
 
 .sidebar__backdrop {
+  /* 首页随机背景：--hsad-sidebar-bg 由页面脚本写入，未写入时退回主题配置的 sidebar_background */
+  background-image: var(--hsad-sidebar-bg, var(--hsad-sidebar-bg-fallback, none));
   background-size: cover;
   background-position: center;
   transform: scale(1.06);
