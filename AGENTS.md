@@ -92,8 +92,14 @@ node node_modules\hexo-cli\bin\hexo clean
 
 另外，`themes/hsad/_config.yml` 已把上游仓库里的个人赞助信息换成中性示例，保留品牌名、配色和菜单结构。
 
+### 主题与站点同名图片会互相覆盖
+
+主题副本原本带着 `themes/hsad/source/images/avatar.jpg` 和 `background.png`，与站点 `source/images/` 下的同名文件冲突。实测构建时**主题那份会覆盖站点那份**：站点头像换成新图后，`public/images/avatar.jpg` 仍是主题里的旧图。现已删除主题副本中的这两张图，头像和背景只由站点 `source/images/` 提供。
+
+以后从上游重新复制主题时，记得删除 `themes/hsad/source/images/` 下的重复图片，否则换图不生效。
+
 ## 内容资源
 
-- `source/images/avatar.jpg`、`background.png`：来自主题仓库
+- `source/images/avatar.jpg`、`background.png`：站点自己的头像与侧栏背景（主题副本里不再保留同名文件）
 - `source/images/ssrf-terminal.png`、`balcony-night.png`：用 Pillow 生成的示意图
 - `source/favicon.ico`：按主题强调色生成的 32×32 圆角图标
