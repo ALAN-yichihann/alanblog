@@ -46,7 +46,7 @@ html(lang=config.language || 'zh-CN')
             var stored = window.sessionStorage.getItem(storageKey);
             // 首页每次进入（含刷新）都重新随机；其它页面优先沿用会话里选中的那张，
             // 没有会话记录时随机一次并记住，保证站内翻页不换图。
-            if (isHome || !stored || list.indexOf(stored) === -1) {
+            if (!stored || list.indexOf(stored) === -1) {
               picked = list[Math.floor(Math.random() * list.length)];
               window.sessionStorage.setItem(storageKey, picked);
             } else {
