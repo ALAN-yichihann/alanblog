@@ -134,7 +134,7 @@ img {
   background-size: cover;
   background-position: center;
   transform: scale(1.02);
-  filter: blur(1.5px) saturate(1);
+  filter: blur(3px) saturate(1);
 }
 
 .sidebar__overlay {
