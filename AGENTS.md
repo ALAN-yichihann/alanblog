@@ -122,6 +122,8 @@ node node_modules\hexo-cli\bin\hexo clean
 
 因为选择逻辑写在 `<head>` 的同步脚本里，背景在首次绘制前就确定，不会出现先显示默认图再闪变的情况。
 
+背景的模糊与饱和度在 `.sidebar__backdrop` 的 `filter` 里（当前 `blur(1.5px) saturate(1)`），遮罩在 `.sidebar__overlay`，侧栏文字阴影在 `.sidebar__content`。想更清晰就调小 `blur`，想更朦胧就调大。
+
 ## 内容资源
 
 - `source/images/avatar.jpg`、`background.png`：站点自己的头像与侧栏背景（主题副本里不再保留同名文件）
