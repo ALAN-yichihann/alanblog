@@ -124,6 +124,21 @@ node node_modules\hexo-cli\bin\hexo clean
 
 背景的模糊与饱和度在 `.sidebar__backdrop` 的 `filter` 里（当前 `blur(1.5px) saturate(1)`），遮罩在 `.sidebar__overlay`，侧栏文字阴影在 `.sidebar__content`。想更清晰就调小 `blur`，想更朦胧就调大。
 
+## 域名与部署路径
+
+站点已绑定自定义域名 `www.alan-yichihann.top`，不再是 `github.io/alanblog` 子路径：
+
+```yml
+# _config.yml
+url: https://www.alan-yichihann.top
+root: /
+```
+
+- `source/CNAME` 内容是 `www.alan-yichihann.top`，Hexo 会把它复制到 `public/CNAME`，随部署发布到站点根目录
+- GitHub 仓库 Settings → Pages → Custom domain 要填同一个域名；DNS 里给 `www` 加 CNAME 指向 `alan-yichihann.github.io`，再勾选 Enforce HTTPS
+- 因为 `root` 变成了 `/`，正文里的图片写 `/images/xxx.png` 或文章资源目录的相对路径都能正确解析，**不要再写 `/alanblog/`**
+- 如果以后换回项目子路径或换域名，只需要改 `url`、`root` 和 `source/CNAME` 三处，模板里的链接都走 `url_for()`，会自动跟随
+
 ## 内容资源
 
 - `source/images/avatar.jpg`、`background.png`：站点自己的头像与侧栏背景（主题副本里不再保留同名文件）

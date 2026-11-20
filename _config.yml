@@ -8,8 +8,8 @@ language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
-url: https://ALAN-yichihann.github.io/alanblog
-root: /alanblog/
+url: https://www.alan-yichihann.top
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
