@@ -1648,3 +1648,64 @@ img {
 .friend-card > .friend-card__body:first-child {
   grid-column: 1 / -1;
 }
+
+/* 图库页：背景图片卡片 */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13.5rem, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.4rem;
+}
+
+.gallery-card {
+  margin: 0;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--accent-soft) 14%, transparent);
+  overflow: hidden;
+}
+
+.gallery-card__media {
+  display: block;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--accent-soft);
+}
+
+.gallery-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 320ms ease;
+}
+
+.gallery-card:hover .gallery-card__media img {
+  transform: scale(1.04);
+}
+
+.gallery-card__body {
+  padding: 0.85rem 0.95rem 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.gallery-card__name {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  color: var(--accent-strong);
+  overflow-wrap: anywhere;
+}
+
+.gallery-card__meta {
+  margin: 0.28rem 0 0;
+  color: var(--text-soft);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+}

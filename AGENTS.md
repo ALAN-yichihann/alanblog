@@ -124,6 +124,26 @@ node node_modules\hexo-cli\bin\hexo clean
 
 背景的模糊与饱和度在 `.sidebar__backdrop` 的 `filter` 里（当前 `blur(1.5px) saturate(1)`），遮罩在 `.sidebar__overlay`，侧栏文字阴影在 `.sidebar__content`。想更清晰就调小 `blur`，想更朦胧就调大。
 
+### 图库与登记文件
+
+侧栏的「图库」指向 `/gallery/`，页面列出所有已登记的背景图。登记文件是 `source/_data/backgrounds.yml`，格式：
+
+```yaml
+- file: bg-blue.jpg     # 必填，必须是 source/images/backgrounds/ 下真实存在的文件名
+  name: 雾蓝            # 显示名称，不必和文件名相同
+  work: 无题            # 作品 / 出处
+  source: 原创          # 来源
+  author: Alan          # 作者
+```
+
+规则：
+
+- 只有「已登记 + 文件存在」的图片才会进入图库和首页随机池；目录里没登记的图片会被忽略
+- `name` 为空时，图库卡片显示文件名
+- 想临时排除某张图，删掉它的条目即可
+- 条目的顺序就是图库里的显示顺序
+- 数据通过 `hsad_background_entries`（图库）和 `hsad_backgrounds`（随机池）两个 helper 读取，都定义在 `themes/hsad/scripts/backgrounds.js`
+
 ## 域名与部署路径
 
 站点已绑定自定义域名 `www.alan-yichihann.top`，不再是 `github.io/alanblog` 子路径：
@@ -142,6 +162,8 @@ root: /
 ## 内容资源
 
 - `source/images/avatar.jpg`、`background.png`：站点自己的头像与侧栏背景（主题副本里不再保留同名文件）
-- `source/images/backgrounds/`：首页随机背景（4 张示例图，可随意增删）
+- `source/images/backgrounds/`：背景图目录，是否参与随机和图库由登记文件决定
+- `source/_data/backgrounds.yml`：图库与随机背景的登记文件（名称 / 作品 / 来源 / 作者）
+- `source/gallery/index.md`：图库页，`layout: gallery`
 - `source/images/ssrf-terminal.png`、`balcony-night.png`：用 Pillow 生成的示意图
 - `source/favicon.ico`：按主题强调色生成的 32×32 圆角图标
