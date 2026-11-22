@@ -13,30 +13,143 @@
 # 下面已经按现有图片列好了 file，把 name / work / source / author 补上即可。
 # 想临时排除某张图，删掉它的条目或整段注释掉。
 
-- file: background.png
-- file: background2.jpg
+- file: kessoku.png
+  name: 結束バンド
+  work: 孤独摇滚
+  source: 官网插画
+  author: 山崎淳、横田明日香、守安 靖尚、金森つばさ
+- file: luye.jpg
+  name: 鹿野泽宇
+  work: 罗小黑战记
+  source: 官方账号
+  author: 官方账号
 - file: bg4.png
+  name: ACG三天王
+  work: 东方Project、凉宫春日的忧郁、初音未来
+  source: twiman.net 2000496137766375488
+  author: れい亜
 - file: bg5.jpg
-- file: bg-blue.jpg
-- file: bg-forest.jpg
-- file: bg-plum.jpg
-- file: bg-sand.jpg
+  name: 团长&此方
+  work: 凉宫春日的忧郁、幸运星
+  source: pixiv.net 151748049
+  author: あかさた
 - file: CITY.jpg
+  name: 小城日常三人组
+  work: 小城日常
+  source: 官网
+  author: 新井圭一
 - file: eva1.jpg
+  name: 真嗣明日香
+  work: 新世纪福音战士
+  source: pixiv.net 152087589
+  author: Moses
 - file: friren.jpg
+  name: 老东西最可爱了
+  work: 葬送的芙莉莲
+  source: pixiv.net 151893576
+  author: Lunavelle
 - file: hina.jpg
+  name: 天野阳菜
+  work: 天气之子
+  source: pixiv.net 126805188
+  author: る！
 - file: kessyoubann.jpg
+  name: 血小板
+  work: 工作细胞
+  source: pixiv.net 151137087
+  author: soyono.
 - file: kiminonawa.jpg
+  name: 君名十周年
+  work: 你的名字
+  source: pixiv.net 149394552
+  author: ひなた夏
 - file: kino.jpg
+  name: 奇诺
+  work: 奇诺之旅
+  source: pixiv.net 151975356
+  author: しろくま
 - file: kon.jpg
+  name: 放学后茶会！
+  work: 轻音少女
+  source: pixiv.net 148732431
+  author: Dubu
 - file: konna.jpg
+  name: 康娜
+  work: 小林家的龙女仆
+  source: pixiv.net 151218371
+  author: かりん
 - file: lain.jpg
+  name: Let's all love lain!
+  work: 玲音
+  source: pixiv.net 151113175
+  author: dako
 - file: madokatohomura.jpg
+  name: 焰圆
+  work: 魔法少女小圆
+  source: pixiv.net 151498254
+  author: 春眠そい
 - file: magic_muggle.jpg
+  name: 红石信号长明，逝者永远安息
+  work: RIP Magic_Muggle 2005-2025
+  source: bilibili网友
+  author: 未知
 - file: makoto.jpg
+  name: 绀野真琴
+  work: 穿越时空的少女
+  source: pixiv.net 147136011
+  author: みそ
 - file: menma.jpg
+  name: 面码
+  work: 我们至今仍未知道那天所看见的花的名字。
+  source: pixiv.net 135224552
+  author: まるよ％11/29負けケット
 - file: misakatokuroko.jpg
+  name: 御坂美琴&白井黑子
+  work: 某科学的超电磁炮
+  source: pixiv.net 151845496
+  author: ぱんちょ
 - file: nichijou.jpg
+  name: 日常三人组
+  work: 日常
+  source: 官方视觉图
+  author: 京阿尼
 - file: rikka.jpg
+  name: 邪王真眼是最强的！
+  work: 中二病也要谈恋爱！
+  source: pixiv.net 148922724
+  author: vennece/ven4292
 - file: sennnenn.jpg
+  name: 千年
+  work: 千年女优
+  source: pixiv.net 103819614
+  author: 羽二重
 - file: yaoya.jpg
+  name: 月见八千代
+  work: 超时空辉夜姬
+  source: pixiv.net 152075685
+  author: 小狼酱sama
+- file: mahiro.jpg
+  name: 绪山真寻
+  work: 别再当欧尼酱了！
+  source: pixiv.net 151782967
+  author: 席
+- file: bg-blue.jpg
+  name: 银蓝
+  work: 无
+  source: 自制
+  author: Deepseek
+- file: bg-forest.jpg
+  name: 林绿
+  work: 无
+  source: 自制
+  author: Deepseek
+- file: bg-plum.jpg
+  name: 梅红
+  work: 无
+  source: 自制
+  author: Deepseek
+- file: bg-sand.jpg
+  name: 沙黄
+  work: 无
+  source: 自制
+  author: Deepseek
